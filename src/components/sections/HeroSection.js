@@ -1,6 +1,4 @@
-// ============================================================================
-// HERO SECTION COMPONENT
-// ============================================================================
+
 import React, { useState, useEffect } from 'react';
 import {
   Box,
@@ -12,17 +10,13 @@ import {
 import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 
 export default function HeroSection({ scrollToSection }) {
-  // ============================================================================
-  // STATE MANAGEMENT - TYPING ANIMATION
-  // ============================================================================
+
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  // ============================================================================
-  // TYPING ANIMATION EFFECT
-  // ============================================================================
+
   useEffect(() => {
     const roles = ['Computer Science Student', 'Full Stack Developer', 'Problem Solver', 'Tech Enthusiast'];
     
@@ -49,9 +43,6 @@ export default function HeroSection({ scrollToSection }) {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed]);
 
-  // ============================================================================
-  // CODE ANIMATION DATA
-  // ============================================================================
   const codeLines = [
     { keyword: 'const', variable: ' developer', operator: ' = ', string: '"passionate"', punctuation: ';' },
     { keyword: 'const', variable: ' skills', operator: ' = ', string: '["React", "Node.js", "Python"]', punctuation: ';' },
@@ -197,7 +188,7 @@ export default function HeroSection({ scrollToSection }) {
               variant="h6"
               sx={{ mb: 2, color: 'primary.main', fontFamily: 'monospace' }}
             >
-              // Current Focus
+              Current Focus
             </Typography>
             <Box sx={{ fontFamily: 'monospace', fontSize: '0.9rem' }}>
               {codeLines.map((line, index) => (
