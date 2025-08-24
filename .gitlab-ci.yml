@@ -1,0 +1,35 @@
+stages:
+  - build
+  - test
+  
+
+build_website:
+  stage: build
+  image: node:22-alpine
+  script:
+    - node --version   # correct way to print Node.js version
+    - npm --version    # print npm version
+    - npm ci  ##this npm install beter than that this ONLY USE THE EVESIONS IN JSON
+    - npm run build
+    - ls -la
+  artifacts:
+    paths:
+      - build/
+
+test_artifact:
+  image: alpine
+  stage: test
+  script:
+    - test -f build/index.html   #test -f checks if the file exists
+
+unit_test:
+  image: node:22-alpine
+  stage: test
+  script:
+    - npm ci
+    - npm test
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - reports/junit.xml
