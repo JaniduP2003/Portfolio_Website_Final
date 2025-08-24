@@ -42,7 +42,6 @@ netlify_deploy:
   stage: .pre
   image: node:22-alpine
   variables:
-    NETLIFY_AUTH_TOKEN: '6bcc7143-9c32-42d3-b4b0-b2f84fdfbd16'
     NETLIFY_SITE_ID: '6bcc7143-9c32-42d3-b4b0-b2f84fdfbd16'
   script:
     - npm install -g netlify-cli
