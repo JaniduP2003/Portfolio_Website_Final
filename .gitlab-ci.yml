@@ -1,35 +1,39 @@
 stages:
   - build
   - test
-  
 
 build_website:
   stage: build
   image: node:22-alpine
   script:
-    - node --version   # correct way to print Node.js version
-    - npm --version    # print npm version
-    - npm ci  ##this npm install beter than that this ONLY USE THE EVESIONS IN JSON
-    - npm run build
-    - ls -la
+    - node --version   # Print Node.js version
+    - npm --version    # Print npm version
+    - npm ci           # Install dependencies using package-lock.json
+    - npm run build    # Build the application
+    - ls -la build/    # List build artifacts
   artifacts:
     paths:
       - build/
+    expire_in: 1 hour  # Artifacts expire after 1 hour
 
 test_artifact:
   image: alpine
   stage: test
+  dependencies:
+    - build_website    # Explicitly depend on build_website job
   script:
-    - test -f build/index.html   #test -f checks if the file exists
+    - test -f build/index.html  # Check if the build artifact exists
+    - echo "Build artifact verification passed"
 
 unit_test:
   image: node:22-alpine
   stage: test
   script:
-    - npm ci
-    - npm test
+    - npm ci           # Install dependencies
+    - npm test         # Run unit tests
   artifacts:
     when: always
     reports:
       junit:
         - reports/junit.xml
+    expire_in: 1 week  # Keep test reports for a week
