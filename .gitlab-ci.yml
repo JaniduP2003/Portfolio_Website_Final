@@ -37,3 +37,10 @@ unit_test:
       junit:
         - reports/junit.xml
     expire_in: 1 week  # Keep test reports for a week
+
+build_website:
+  stage: .pre
+  image: node:22-alpine
+  script:
+    - npm install -g netlify-cli
+    - netlify --version
