@@ -46,4 +46,5 @@ netlify_deploy:
   script:
     - npm install -g netlify-cli
     - netlify --version
+    - netlify status
     - echo "Deploying to site id $NETLIFY_SITE_ID"
