@@ -44,9 +44,12 @@ netlify_deploy:
   image: node:22-alpine
   variables:
     NETLIFY_SITE_ID: '6bcc7143-9c32-42d3-b4b0-b2f84fdfbd16'
+  dependencies:
+    - build_website   # pull in build/ from previous stage
   script:
     - npm install -g netlify-cli
     - netlify --version
     - netlify status
     - echo "Deploying to site id $NETLIFY_SITE_ID"
+    - ls -la build/   # ✅ debug: check that artifact is here
     - netlify deploy --prod --dir build
