@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - deploy
 
 build_website:
   stage: build
@@ -39,7 +40,7 @@ unit_test:
     expire_in: 1 week  # Keep test reports for a week
 
 netlify_deploy:
-  stage: .pre
+  stage: deploy
   image: node:22-alpine
   variables:
     NETLIFY_SITE_ID: '6bcc7143-9c32-42d3-b4b0-b2f84fdfbd16'
