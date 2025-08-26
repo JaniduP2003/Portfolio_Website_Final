@@ -52,4 +52,4 @@ deploy:
     - netlify status
     - echo "Deploying to site id $NETLIFY_SITE_ID"
     - ls -la build/   # ✅ debug: check that artifact is here
-    - netlify deploy --prod --dir build
+    - netlify deploy --prod --dir build --skip-build
