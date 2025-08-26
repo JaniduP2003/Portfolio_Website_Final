@@ -119,10 +119,14 @@ export default function HeroSection({ scrollToSection }) {
                 onClick={() => scrollToSection('about')}
                 sx={{
                   px: 4,
-                  py: 1.5,
+                  py: 1.5,ontSize: '1.1rem',
                   borderRadius: 2,
                   textTransform: 'none',
                   fontSize: '1.1rem',
+    backgroundColor: '#e84fdbff', // custom purple
+    color: '#fff',              // text color
+    '&:hover': {
+      backgroundColor: '#7d0083ff',}
                 }}
               >
                 Learn About Me
