@@ -1,7 +1,7 @@
 stages:
   - build
   - test
-  - deploy
+  - netlify_deploy
 
 build_website:
   stage: build
@@ -39,7 +39,7 @@ unit_test:
         - reports/junit.xml
     expire_in: 1 week  # Keep test reports for a week
 
-netlify_deploy:
+nenetlify_deploy:
   stage: deploy
   image: node:22-alpine
   variables:
@@ -52,4 +52,4 @@ netlify_deploy:
     - netlify status
     - echo "Deploying to site id $NETLIFY_SITE_ID"
     - ls -la build/   # ✅ debug: check that artifact is here
-    - netlify deploy --prod --dir build
+    - netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod --dir build
