@@ -1,7 +1,7 @@
 stages:
   - build
   - test
-  - netlify_deploy
+  - deploy
 
 build_website:
   stage: build
@@ -39,7 +39,7 @@ unit_test:
         - reports/junit.xml
     expire_in: 1 week  # Keep test reports for a week
 
-nenetlify_deploy:
+deploy:
   stage: deploy
   image: node:22-alpine
   variables:
