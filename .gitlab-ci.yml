@@ -49,7 +49,10 @@ deploy:
   script:
     - npm install -g netlify-cli
     - netlify --version
-    - netlify status
     - echo "Deploying to site id $NETLIFY_SITE_ID"
     - ls -la build/   # ✅ debug: check that artifact is here
-    - netlify deploy --prod --dir build --skip-build
+    # Use the correct deploy command with authentication
+    - netlify deploy --prod --dir=build --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
+  # Only deploy when merging to main branch
+  only:
+    - main
