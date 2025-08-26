@@ -44,12 +44,12 @@ deploy:
   image: node:22-alpine
   variables:
     NETLIFY_SITE_ID: '561eb8b2-7b25-44cb-9d85-45f2a033c482'
-    NETLIFY_SKIP_BUILD: 'true'
   dependencies:
     - build_website   # pull in build/ from previous stage
   script:
     - npm install -g netlify-cli
     - netlify --version
+    - netlify status
     - echo "Deploying to site id $NETLIFY_SITE_ID"
-    - ls -la build/   # debug: check that artifact is here
-    - netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod --dir build --skip-functions-cache --message "Deploy from GitLab CI"
+    - ls -la build/   # ✅ debug: check that artifact is here
+    - netlify deploy --prod --dir build
