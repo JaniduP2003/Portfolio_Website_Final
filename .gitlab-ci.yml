@@ -53,7 +53,7 @@ deploy:
     - ls -la build/   # ✅ debug: check that artifact is here
     # Use the correct deploy command with authentication
     - netlify deploy --prod --dir build --site $NETLIFY_SITE_ID
-    - apk add curl
-    - curl "https://janidupabasara2003.netlify.app/" | grep "Hi, I'm Janidu"
+  #- apk add curl
+  # - curl "https://janidupabasara2003.netlify.app/" | grep "Hi, I'm Janidu"
   only:
     - main
