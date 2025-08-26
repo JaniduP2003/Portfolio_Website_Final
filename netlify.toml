@@ -1,6 +1,6 @@
 [build]
   publish = "build"
-  command = "npm run build"
+  # Removed command since build is handled by GitLab CI
 
 [build.environment]
   NODE_VERSION = "18"
