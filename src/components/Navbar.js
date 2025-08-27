@@ -91,7 +91,7 @@ export default function Navbar({ scrollToSection }) {
                 cursor: 'pointer',
               }}
             >
-              Janidu Peiris
+              Janidu Pabasara
             </Typography>
 
             {/* Desktop Menu */}

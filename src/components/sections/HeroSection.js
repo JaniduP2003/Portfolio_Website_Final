@@ -188,10 +188,10 @@ export default function HeroSection({ scrollToSection }) {
           <Button href="https://github.com/JaniduP2003" target="_blank" startIcon={<GitHub />} sx={{ color: 'text.secondary' }}>
             GitHub
           </Button>
-          <Button href="https://linkedin.com/in/janidu-peiris" target="_blank" startIcon={<LinkedIn />} sx={{ color: 'text.secondary' }}>
+          <Button href="https://www.linkedin.com/in/janidu-pabasara2003?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" startIcon={<LinkedIn />} sx={{ color: 'text.secondary' }}>
             LinkedIn
           </Button>
-          <Button href="mailto:janidupeiris2003@gmail.com" startIcon={<Email />} sx={{ color: 'text.secondary' }}>
+          <Button href="pabasaraj99mov@gmail.com" startIcon={<Email />} sx={{ color: 'text.secondary' }}>
             Email
           </Button>
         </Box>

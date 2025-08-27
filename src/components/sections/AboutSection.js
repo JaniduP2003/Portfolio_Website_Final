@@ -66,6 +66,8 @@ export default function AboutSection() {
                 }}
               >
                 <Avatar
+                  alt="Janidu Profile"
+                  src="/images/janidu profile.jpg"
                   sx={{
                     width: 120,
                     height: 120,
@@ -96,23 +98,7 @@ export default function AboutSection() {
               </Card>
             </Grid>
 
-            <Grid item xs={12} md={10} className="box-befor-bio">
-  <Card
-    sx={{
-      p: 3,
-      backgroundColor: 'background.paper',
-      backdropFilter: 'blur(10px)',
-      border: '1px solid rgba(255, 255, 255, 0.1)',
-      width: '100%',
-    }}
-  >
-    <Typography variant="body1">
-      This Box renders as an HTML section element.
-    </Typography>
-  </Card>
-</Grid>
-
-            {/* Bio Section */}
+          {/* Bio Section */}
             <Grid item xs={12} md={8}>
               <Card
                 sx={{
@@ -126,20 +112,20 @@ export default function AboutSection() {
                   My Story
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.7 }}>
-                  I'm a passionate Computer Science student with a deep love for creating innovative 
-                  digital solutions. My journey in technology began with curiosity about how things work, 
-                  and has evolved into a commitment to building applications that make a difference.
+                I’m a passionate Computer Science student with a strong love for coding and problem 
+                solving. What started as simple curiosity about technology has grown into a journey 
+                of building real-world applications and exploring the deeper side of computing.
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.7 }}>
-                  Currently pursuing my degree in Computer Science, I've gained hands-on experience 
-                  in full-stack development, working with modern technologies like React, Node.js, 
-                  Python, and various databases. I believe in writing clean, efficient code and 
-                  creating user experiences that are both functional and delightful.
+                I enjoy working with React, Java (Spring Boot), C programming, and have a deep appreciation 
+                for Linux both as a tool and as a philosophy of freedom and open collaboration.
                 </Typography>
                 <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
-                  When I'm not coding, you'll find me exploring new technologies, contributing to 
-                  open-source projects, or enjoying music and gaming. I'm always eager to learn, 
-                  collaborate, and take on new challenges that push me to grow as a developer.
+                Beyond coding, I’m drawn to philosophy and poetry, where I find new ways of expressing ideas and understanding 
+                the world. I also dedicate time to the gym, pushing myself to grow physically just as much as I do intellectually.
+
+                For me, coding isn’t just a career path it’s a craft I enjoy refining every day. I’m always eager to learn, experiment, and contribute 
+                to meaningful projects that blend creativity, logic, and passion.
                 </Typography>
               </Card>
             </Grid>
