@@ -30,7 +30,6 @@ export default function SkillsSection() {
         { name: 'React', level: 90 },
         { name: 'JavaScript', level: 85 },
         { name: 'HTML/CSS', level: 95 },
-        { name: 'TypeScript', level: 75 },
         { name: 'Material-UI', level: 80 },
       ],
     },
@@ -39,50 +38,45 @@ export default function SkillsSection() {
       icon: <Storage />,
       skills: [
         { name: 'Node.js', level: 80 },
-        { name: 'Python', level: 85 },
-        { name: 'Express.js', level: 75 },
-        { name: 'REST APIs', level: 80 },
-        { name: 'GraphQL', level: 60 },
+        { name: 'Java', level: 75 },
       ],
     },
     {
       title: 'Database & Cloud',
       icon: <CloudQueue />,
       skills: [
-        { name: 'MongoDB', level: 75 },
+        { name: 'SQL', level: 75 },
         { name: 'PostgreSQL', level: 70 },
-        { name: 'Firebase', level: 80 },
-        { name: 'AWS', level: 65 },
-        { name: 'Docker', level: 60 },
       ],
     },
     {
-      title: 'Mobile & Tools',
+      title: 'UI/UX',
       icon: <PhoneAndroid />,
       skills: [
-        { name: 'React Native', level: 70 },
-        { name: 'Git/GitHub', level: 90 },
-        { name: 'VS Code', level: 95 },
         { name: 'Figma', level: 75 },
-        { name: 'Postman', level: 85 },
+        
+      ],
+    },
+    {
+    title: 'CI/CD',
+      icon: <CloudQueue />,
+      skills: [
+        { name: 'Netlify', level: 75 },
+        { name: 'GitLab', level: 70 },
       ],
     },
   ];
 
   const currentlyLearning = [
     'Next.js',
-    'Kubernetes',
-    'TensorFlow',
-    'Go Programming',
+    'GitLab',
+    'C#',
+    'AWS',
   ];
 
   const learningGoals = [
-    'Machine Learning with Python',
     'DevOps and CI/CD',
-    'Microservices Architecture',
-    'Advanced React Patterns',
     'System Design',
-    'Blockchain Development',
   ];
 
   return (
