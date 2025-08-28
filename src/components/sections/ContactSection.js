@@ -19,7 +19,6 @@ import {
   LocationOn,
   GitHub,
   LinkedIn,
-  Twitter,
   Send,
 } from '@mui/icons-material';
 
