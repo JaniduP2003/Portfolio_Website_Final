@@ -41,9 +41,10 @@ export default function ContactSection() {
   // ============================================================================
   // EMAILJS CONFIGURATION
   // ============================================================================
+  // Replace these with your actual EmailJS credentials
   const EMAILJS_SERVICE_ID = 'service_pl6tb77';
   const EMAILJS_TEMPLATE_ID = 'template_lbysop9';
-  const EMAILJS_PUBLIC_KEY = 'Janidumusi';
+  const EMAILJS_PUBLIC_KEY = '338ouCjYz8jy7cs_Z'; // This should be a long alphanumeric string from EmailJS
 
   // ============================================================================
   // CONTACT INFORMATION
