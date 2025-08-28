@@ -39,17 +39,17 @@ export default function ProjectsSection() {
       github: 'https://github.com/JaniduP2003/Myportfolio2',
       gitlab: 'https://gitlab.com/JaniduP2003/janiduportfolio',
       linkedin: 'https://linkedin.com/in/janidup2003',
-      demo: 'https://your-netlify-link.netlify.app',
+      
       featured: true,
     },
     {
       id: 2,
       title: 'SmartPhone Accessories Web App',
       description:
-        'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      technologies: ['React', 'Firebase', 'Material-UI', 'Socket.io'],
+        'A modern and responsive web application for exploring and purchasing smartphone accessories. The app provides an easy-to-use interface with product listings, search and filter options, and a smooth shopping experience. Customers can browse categories like cases, chargers, headphones, and more, making it a one-stop solution for mobile essentials.',
+      technologies: ['React', 'MYSQL', 'Material-UI',],
       category: 'frontend',
-      github: 'https://github.com/SLIIT-FacultyOfComputing/se-group-project-group-11-phone_-_accessories.git',
+      github: 'https://github.com/JaniduP2003/smartphone-accessories.git',
       gitlab: null,
       linkedin: 'https://linkedin.com/in/janidup2003',
      
@@ -57,56 +57,17 @@ export default function ProjectsSection() {
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
+      title: 'FormLang++: A DSL & HTML Form Generato',
       description:
-        'A responsive weather application that provides current weather conditions and forecasts with beautiful visualizations.',
-      technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
+        'Designed FormLang++, a Domain-Specific Language for defining web forms, using Lex, Yacc, and C. The system parses .form scripts and generates fully functional HTML forms with built-in validation.',
+      technologies: ['lex', 'yacc', 'Lexer & Parser','C', 'Error Handling:'],
       category: 'frontend',
-      github: 'https://github.com/JaniduP2003/weather-dashboard',
+      github: 'https://github.com/JaniduP2003/FormLang.git',
       gitlab: null,
       linkedin: 'https://linkedin.com/in/janidup2003',
-      demo: 'https://weather-dashboard-demo.vercel.app',
       featured: false,
     },
-    {
-      id: 4,
-      title: 'REST API Server',
-      description:
-        'A robust REST API server with authentication, data validation, and comprehensive documentation using Swagger.',
-      technologies: ['Node.js', 'Express', 'PostgreSQL', 'JWT'],
-      category: 'backend',
-      github: 'https://github.com/JaniduP2003/rest-api-server',
-      gitlab: null,
-      linkedin: 'https://linkedin.com/in/janidup2003',
-      demo: null,
-      featured: false,
-    },
-    {
-      id: 5,
-      title: 'Mobile Expense Tracker',
-      description:
-        'A cross-platform mobile app for tracking expenses with categories, budgets, and spending analytics.',
-      technologies: ['React Native', 'Expo', 'SQLite', 'Chart.js'],
-      category: 'mobile',
-      github: 'https://github.com/JaniduP2003/expense-tracker',
-      gitlab: null,
-      linkedin: 'https://linkedin.com/in/janidup2003',
-      demo: null,
-      featured: true,
-    },
-    {
-      id: 6,
-      title: 'Portfolio Website',
-      description:
-        'A responsive portfolio website built with React and Material-UI, showcasing projects and skills.',
-      technologies: ['React', 'Material-UI', 'CSS3', 'Vercel'],
-      category: 'frontend',
-      github: 'https://github.com/JaniduP2003/portfolio',
-      gitlab: null,
-      linkedin: 'https://linkedin.com/in/janidup2003',
-      demo: 'https://janidu-portfolio.vercel.app',
-      featured: false,
-    },
+   
   ];
 
   // Filter projects based on selected category
