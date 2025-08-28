@@ -28,15 +28,16 @@ export default function ProjectsSection() {
   // ============================================================================
   const projects = [
     {
-      id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React frontend and Node.js backend, featuring user authentication, payment integration, and admin dashboard.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      category: 'fullstack',
-      github: 'https://github.com/JaniduP2003/ecommerce-platform',
-      demo: 'https://ecommerce-demo.vercel.app',
+      id: 2,
+      title: 'CI/CD Pipeline for Portfolio Website',
+      description: 'A portfolio website integrated with a GitLab CI/CD pipeline and Netlify deployment. The pipeline automates build, test, and deployment stages, ensuring reliable and production-ready updates.',
+      technologies: ['React', 'GitLab CI/CD', 'Netlify'],
+      category: 'devops',
+      github: 'https://github.com/JaniduP2003/Myportfolio2',
+      demo: 'https://your-netlify-link.netlify.app',
       featured: true,
-    },
+    }
+    ,
     {
       id: 2,
       title: 'Task Management App',
