@@ -19,7 +19,7 @@ build_website:
 
 test_artifact:
   image: alpine
-  stage: test
+  stage: test alpine
   dependencies:
     - build_website    # Explicitly depend on build_website job
   script:

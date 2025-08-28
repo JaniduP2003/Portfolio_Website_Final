@@ -16,6 +16,8 @@ import {
   Paper,
 } from '@mui/material';
 import { GitHub, Launch, Code } from '@mui/icons-material';
+import GitlabIcon from '@mui/icons-material/Storage'; // Placeholder GitLab icon
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function ProjectsSection() {
   // ============================================================================
@@ -28,72 +30,88 @@ export default function ProjectsSection() {
   // ============================================================================
   const projects = [
     {
-      id: 2,
+      id: 1,
       title: 'CI/CD Pipeline for Portfolio Website',
-      description: 'A portfolio website integrated with a GitLab CI/CD pipeline and Netlify deployment. The pipeline automates build, test, and deployment stages, ensuring reliable and production-ready updates.',
+      description:
+        'A portfolio website integrated with a GitLab CI/CD pipeline and Netlify deployment. The pipeline automates build, test, and deployment stages, ensuring reliable and production-ready updates.',
       technologies: ['React', 'GitLab CI/CD', 'Netlify'],
       category: 'devops',
       github: 'https://github.com/JaniduP2003/Myportfolio2',
+      gitlab: 'https://gitlab.com/JaniduP2003/janiduportfolio',
+      linkedin: 'https://linkedin.com/in/janidup2003',
       demo: 'https://your-netlify-link.netlify.app',
       featured: true,
-    }
-    ,
+    },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+      title: 'SmartPhone Accessories Web App',
+      description:
+        'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
       technologies: ['React', 'Firebase', 'Material-UI', 'Socket.io'],
       category: 'frontend',
-      github: 'https://github.com/JaniduP2003/task-manager',
-      demo: 'https://task-manager-demo.netlify.app',
+      github: 'https://github.com/SLIIT-FacultyOfComputing/se-group-project-group-11-phone_-_accessories.git',
+      gitlab: null,
+      linkedin: 'https://linkedin.com/in/janidup2003',
+     
       featured: true,
     },
     {
       id: 3,
       title: 'Weather Dashboard',
-      description: 'A responsive weather application that provides current weather conditions and forecasts with beautiful visualizations.',
+      description:
+        'A responsive weather application that provides current weather conditions and forecasts with beautiful visualizations.',
       technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
       category: 'frontend',
       github: 'https://github.com/JaniduP2003/weather-dashboard',
+      gitlab: null,
+      linkedin: 'https://linkedin.com/in/janidup2003',
       demo: 'https://weather-dashboard-demo.vercel.app',
       featured: false,
     },
     {
       id: 4,
       title: 'REST API Server',
-      description: 'A robust REST API server with authentication, data validation, and comprehensive documentation using Swagger.',
+      description:
+        'A robust REST API server with authentication, data validation, and comprehensive documentation using Swagger.',
       technologies: ['Node.js', 'Express', 'PostgreSQL', 'JWT'],
       category: 'backend',
       github: 'https://github.com/JaniduP2003/rest-api-server',
+      gitlab: null,
+      linkedin: 'https://linkedin.com/in/janidup2003',
       demo: null,
       featured: false,
     },
     {
       id: 5,
       title: 'Mobile Expense Tracker',
-      description: 'A cross-platform mobile app for tracking expenses with categories, budgets, and spending analytics.',
+      description:
+        'A cross-platform mobile app for tracking expenses with categories, budgets, and spending analytics.',
       technologies: ['React Native', 'Expo', 'SQLite', 'Chart.js'],
       category: 'mobile',
       github: 'https://github.com/JaniduP2003/expense-tracker',
+      gitlab: null,
+      linkedin: 'https://linkedin.com/in/janidup2003',
       demo: null,
       featured: true,
     },
     {
       id: 6,
       title: 'Portfolio Website',
-      description: 'A responsive portfolio website built with React and Material-UI, showcasing projects and skills.',
+      description:
+        'A responsive portfolio website built with React and Material-UI, showcasing projects and skills.',
       technologies: ['React', 'Material-UI', 'CSS3', 'Vercel'],
       category: 'frontend',
       github: 'https://github.com/JaniduP2003/portfolio',
+      gitlab: null,
+      linkedin: 'https://linkedin.com/in/janidup2003',
       demo: 'https://janidu-portfolio.vercel.app',
       featured: false,
     },
   ];
 
   // Filter projects based on selected category
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === filter);
+  const filteredProjects =
+    filter === 'all' ? projects : projects.filter((project) => project.category === filter);
 
   // ============================================================================
   // EVENT HANDLERS
@@ -140,9 +158,10 @@ export default function ProjectsSection() {
               }}
             >
               <ToggleButton value="all">All</ToggleButton>
-              <ToggleButton value="fullstack">Full Stack</ToggleButton>
-              <ToggleButton value="CI/CD">CI/CD</ToggleButton>
-              <ToggleButton value="Formlang">CI/CD</ToggleButton>
+              <ToggleButton value="frontend">Frontend</ToggleButton>
+              <ToggleButton value="backend">Backend</ToggleButton>
+              <ToggleButton value="mobile">Mobile</ToggleButton>
+              <ToggleButton value="devops">DevOps</ToggleButton>
             </ToggleButtonGroup>
           </Box>
 
@@ -187,19 +206,21 @@ export default function ProjectsSection() {
                     )}
                     <Code sx={{ fontSize: 60, color: 'primary.main' }} />
                   </Box>
-                  
-                  <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+
+                  <CardContent
+                    sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+                  >
                     <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
                       {project.title}
                     </Typography>
-                    
+
                     <Typography
                       variant="body2"
                       sx={{ mb: 3, color: 'text.secondary', flexGrow: 1 }}
                     >
                       {project.description}
                     </Typography>
-                    
+
                     <Box sx={{ mb: 3 }}>
                       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                         {project.technologies.map((tech, index) => (
@@ -216,18 +237,44 @@ export default function ProjectsSection() {
                         ))}
                       </Box>
                     </Box>
-                    
-                    <Box sx={{ display: 'flex', gap: 1 }}>
-                      <Button
-                        href={project.github}
-                        target="_blank"
-                        startIcon={<GitHub />}
-                        variant="outlined"
-                        size="small"
-                        sx={{ flex: 1 }}
-                      >
-                        Code
-                      </Button>
+
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                      {project.github && (
+                        <Button
+                          href={project.github}
+                          target="_blank"
+                          startIcon={<GitHub />}
+                          variant="outlined"
+                          size="small"
+                          sx={{ flex: 1 }}
+                        >
+                          GitHub
+                        </Button>
+                      )}
+                      {project.gitlab && (
+                        <Button
+                          href={project.gitlab}
+                          target="_blank"
+                          startIcon={<GitlabIcon />}
+                          variant="outlined"
+                          size="small"
+                          sx={{ flex: 1 }}
+                        >
+                          GitLab
+                        </Button>
+                      )}
+                      {project.linkedin && (
+                        <Button
+                          href={project.linkedin}
+                          target="_blank"
+                          startIcon={<LinkedInIcon />}
+                          variant="outlined"
+                          size="small"
+                          sx={{ flex: 1 }}
+                        >
+                          LinkedIn
+                        </Button>
+                      )}
                       {project.demo && (
                         <Button
                           href={project.demo}
@@ -264,7 +311,8 @@ export default function ProjectsSection() {
               Want to see more?
             </Typography>
             <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-              Check out my GitHub profile for more projects and contributions to open source.
+              Check out my GitHub profile for more projects and contributions to
+              open source.
             </Typography>
             <Button
               href="https://github.com/JaniduP2003"
