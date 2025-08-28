@@ -67,6 +67,17 @@ export default function ProjectsSection() {
       linkedin: 'https://linkedin.com/in/janidup2003',
       featured: false,
     },
+    {
+      id: 4,
+      title: 'Solatraker Automated Sola Panal Positiioning System',
+      description:
+        'A real-time solar panel positioning system that automatically adjusts panel angles to maximize sunlight capture. It tracks the sun continuously, stores angle data in the cloud, and provides a web dashboard for live monitoring and historical analysis.',
+      technologies: ['arduino', 'Iot', 'Web Dashboard',],
+      category: 'frontend',
+      gitlab: null,
+      linkedin: 'https://linkedin.com/in/janidup2003',
+      featured: false,
+    },
    
   ];
 
@@ -119,10 +130,7 @@ export default function ProjectsSection() {
               }}
             >
               <ToggleButton value="all">All</ToggleButton>
-              <ToggleButton value="frontend">Frontend</ToggleButton>
-              <ToggleButton value="backend">Backend</ToggleButton>
-              <ToggleButton value="mobile">Mobile</ToggleButton>
-              <ToggleButton value="devops">DevOps</ToggleButton>
+              
             </ToggleButtonGroup>
           </Box>
 
