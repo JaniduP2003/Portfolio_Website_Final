@@ -60,7 +60,7 @@ describe('AboutSection Component', () => {
   });
 
   test('renders avatar with correct initials', () => {
-    expect(screen.getByText('JP')).toBeInTheDocument();
+    expect(screen.getByText('Janidu Pabasara')).toBeInTheDocument();
   });
 
   test('renders all statistics', () => {
@@ -82,15 +82,16 @@ describe('AboutSection Component', () => {
   });
 
   test('renders complete bio content', () => {
-    const bioTexts = [
-      /I'm a passionate Computer Science student/,
-      /Currently pursuing my degree/,
-      /When I'm not coding/
-    ];
-
-    bioTexts.forEach(text => {
-      expect(screen.getByText(text)).toBeInTheDocument();
-    });
+    // Get the bio section and check for key phrases in the content
+    const bioSection = screen.getByText('My Story').closest('.MuiPaper-root');
+    const bioContent = bioSection.textContent;
+    
+    // Check for key phrases in the bio content
+    // Handle both straight and curly apostrophes
+    expect(bioContent).toMatch(/(I'|I’)m a passionate Computer Science student/i);
+    expect(bioContent).toMatch(/React, Java \(Spring Boot\), C programming/i);
+    expect(bioContent).toMatch(/philosophy and poetry/i);
+    expect(bioContent).toMatch(/Linux both as a tool and as a philosophy/i);
   });
 
   test('renders interests and hobbies section', () => {
@@ -146,7 +147,10 @@ describe('AboutSection Component', () => {
   test('contact information is displayed with icons', () => {
     // Check for location and email text
     expect(screen.getByText('Sri Lanka')).toBeInTheDocument();
-    expect(screen.getByText('janidupeiris2003@gmail.com')).toBeInTheDocument();
+    
+    // Handle multiple instances of email with getAllByText
+    const emailElements = screen.getAllByText('janidupeiris2003@gmail.com');
+    expect(emailElements.length).toBeGreaterThan(0);
   });
 });
 

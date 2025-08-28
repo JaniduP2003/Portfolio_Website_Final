@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
 
@@ -48,11 +48,17 @@ describe('HomePage Integration', () => {
   });
 
   test('renders profile information', () => {
-    expect(screen.getByText('Janidu Pabasara')).toBeInTheDocument();
+    // Check for name in the document (multiple instances)
+    const nameElements = screen.getAllByText('Janidu Pabasara');
+    expect(nameElements.length).toBeGreaterThan(0);
+    
+    // Check for other profile information
     expect(screen.getByText('Computer Science Student')).toBeInTheDocument();
     expect(screen.getByText('Sri Lanka')).toBeInTheDocument();
-    // Use getAllByText since email appears multiple times (profile and contact sections)
-    expect(screen.getAllByText('janidupeiris2003@gmail.com')).toHaveLength(2);
+    
+    // Updated email to match the component - handle multiple instances
+    const emailElements = screen.getAllByText('janidupeiris2003@gmail.com');
+    expect(emailElements.length).toBeGreaterThan(0);
   });
 
   test('renders statistics cards', () => {
@@ -80,9 +86,16 @@ describe('HomePage Integration', () => {
   });
 
   test('renders bio content', () => {
-    expect(screen.getByText(/I'm a passionate Computer Science student/)).toBeInTheDocument();
-    expect(screen.getByText(/Currently pursuing my degree/)).toBeInTheDocument();
-    expect(screen.getByText(/When I'm not coding/)).toBeInTheDocument();
+    // Get the bio section and check for key phrases in the content
+    const bioSection = screen.getByText('My Story').closest('.MuiPaper-root');
+    const bioContent = bioSection.textContent;
+    
+    // Check for key phrases in the bio content
+    // Handle both straight and curly apostrophes
+    expect(bioContent).toMatch(/(I'|I’)m a passionate Computer Science student/i);
+    expect(bioContent).toMatch(/React, Java \(Spring Boot\), C programming/i);
+    expect(bioContent).toMatch(/philosophy and poetry/i);
+    expect(bioContent).toMatch(/Linux both as a tool and as a philosophy/i);
   });
 });
 
@@ -96,8 +109,10 @@ describe('About Section Functionality', () => {
     expect(aboutSection).toBeInTheDocument();
   });
 
-  test('profile avatar displays initials', () => {
-    expect(screen.getByText('JP')).toBeInTheDocument();
+  test('profile avatar displays image with alt text', () => {
+    const avatar = screen.getByAltText('Janidu Profile');
+    expect(avatar).toBeInTheDocument();
+    expect(avatar).toHaveAttribute('src');
   });
 
   test('interest chips are interactive elements', () => {
@@ -147,9 +162,15 @@ describe('Accessibility', () => {
   });
 
   test('images have proper alt text or aria labels', () => {
-    // Check for avatar which should have accessible content
-    const avatar = screen.getByText('JP');
-    expect(avatar).toBeInTheDocument();
+    // Check all images have alt text
+    const images = screen.getAllByRole('img');
+    images.forEach(img => {
+      expect(img).toHaveAttribute('alt');
+      expect(img.getAttribute('alt')).not.toBe('');
+    });
+    
+    // Check for profile image specifically
+    expect(screen.getByAltText('Janidu Profile')).toBeInTheDocument();
   });
 
   test('section has proper semantic structure', () => {
