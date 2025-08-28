@@ -139,10 +139,9 @@ export default function ProjectsSection() {
               }}
             >
               <ToggleButton value="all">All</ToggleButton>
-              <ToggleButton value="frontend">Frontend</ToggleButton>
-              <ToggleButton value="backend">Backend</ToggleButton>
               <ToggleButton value="fullstack">Full Stack</ToggleButton>
-              <ToggleButton value="mobile">Mobile</ToggleButton>
+              <ToggleButton value="CI/CD">CI/CD</ToggleButton>
+              <ToggleButton value="Formlang">CI/CD</ToggleButton>
             </ToggleButtonGroup>
           </Box>
 

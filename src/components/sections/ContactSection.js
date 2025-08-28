@@ -43,14 +43,14 @@ export default function ContactSection() {
     {
       icon: <Email />,
       title: 'Email',
-      value: 'janidupeiris2003@gmail.com',
-      link: 'mailto:janidupeiris2003@gmail.com',
+      value: 'pabasaraj99mov@gmail.com',
+      link: 'mailto:pabasaraj99mov@gmail.com',
     },
     {
       icon: <Phone />,
       title: 'Phone',
-      value: '+94 77 123 4567',
-      link: 'tel:+94771234567',
+      value: '+94 704046228',
+      link: 'tel:+94 704046228',
     },
     {
       icon: <LocationOn />,
@@ -70,15 +70,10 @@ export default function ContactSection() {
     {
       icon: <LinkedIn />,
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/janidu-peiris',
+      url: 'https://www.linkedin.com/in/janidu-pabasara2003?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
       color: '#0077b5',
     },
-    {
-      icon: <Twitter />,
-      name: 'Twitter',
-      url: 'https://twitter.com/janidu_peiris',
-      color: '#1da1f2',
-    },
+   
   ];
 
   // ============================================================================
